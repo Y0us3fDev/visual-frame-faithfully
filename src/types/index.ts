@@ -74,8 +74,8 @@ export interface Attendance {
   id: string;
   employeeId: string;
   date: string;
-  checkIn?: string;
-  checkOut?: string;
+  checkIn?: string | undefined;
+  checkOut?: string | undefined;
   status: AttendanceStatus;
 }
 
@@ -120,7 +120,7 @@ export interface Bed {
   id: string;
   label: string;
   status: BedStatus;
-  patientId?: string;
+  patientId?: string | undefined;
 }
 export interface Room {
   id: string;
@@ -178,8 +178,8 @@ export interface RadiologyRequest {
   priority: Priority;
   status: RadiologyStatus;
   requestedAt: string;
-  findings?: string;
-  impression?: string;
+  findings?: string | undefined;
+  impression?: string | undefined;
 }
 
 export type InvoiceStatus = "paid" | "pending" | "partial" | "overdue" | "cancelled";

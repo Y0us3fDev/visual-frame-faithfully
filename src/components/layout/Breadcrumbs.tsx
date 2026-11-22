@@ -9,7 +9,7 @@ export function Breadcrumbs() {
   const path = useRouterState({ select: (s) => s.location.pathname });
   const segs = path.split("/").filter(Boolean);
   const Sep = isRTL ? ChevronLeft : ChevronRight;
-  const crumbs: { label: string; to?: string }[] = [];
+  const crumbs: { label: string; to?: string | undefined }[] = [];
   if (segs[0]) {
     const nav = ALL_NAV.find((n) => n.to === `/${segs[0]}`);
     crumbs.push({ label: nav ? nav[lang] : segs[0], to: segs.length > 1 ? `/${segs[0]}` : undefined });
